@@ -5,12 +5,13 @@ import { headerData } from "../data/data";
 import { nanoid } from "nanoid";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
+import Link from "next/link";
 
 function Header() {
   const [cliked, setCliked] = useState(true);
   return (
     <header className="h-1/6 bg-black/40 flex justify-between items-center px-3 ">
-      <div className=" w-24 h-9 sm:w-48 sm:h-16 brightness-90 opacity-95 cursor-pointer">
+      <div className=" w-16 h-5 sm:w-48 sm:h-16 brightness-90 opacity-95 cursor-pointer">
       <Image className="rounded-md"
         src={"/logo.png"}
         alt="logo"
@@ -31,7 +32,7 @@ function Header() {
 
         <div className="flex md:w-80  justify-end ">
           <div className="text-blue-400 hover:text-blue-300 font-myFont underline  cursor-pointer text-md font-semibold md:text-xl">
-            Login{" "}
+             <Link href={"/login"}>Login</Link>
           </div>
           <span className="text-white pt-[2px] px-1">/</span>
           <div className="text-blue-400 hover:text-blue-300 font-myFont underline cursor-pointer text-md font-semibold md:text-xl">

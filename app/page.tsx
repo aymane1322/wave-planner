@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
         <h1 className="text-myWhite font-myFont text-4xl font-bold sm:text-7xl sm:text-slate-50">
           Wave Planner
         </h1>
+       
         <div className="group relative h-24 w-11/12 cursor-pointer sm:h-32 ">
           <div className="glass"></div>
           <div className="grid grid-cols-4 place-items-center grid-rows-4">
