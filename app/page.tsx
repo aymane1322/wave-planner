@@ -1,9 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
+
 
 export default function Home() {
+
+ 
   return (
-    <main className="w-full h-4/6">
+    <main className="w-full h-full">
       <div className="flex flex-col justify-around items-center w-full h-full ">
         <h1 className="text-myWhite font-myFont text-4xl font-bold sm:text-7xl sm:text-slate-50">
           Wave Planner
@@ -27,11 +29,12 @@ export default function Home() {
           </div>
         </div>
       </div>
+ 
       <Image
         className="-z-50 object-cover absolute"
         src={"/bgSurf.jpg"}
         alt="background"
-        layout="fill"
+        fill
       />
     </main>
   );

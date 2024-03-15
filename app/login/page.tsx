@@ -3,12 +3,10 @@ import Image from 'next/image'
 
 function page() {
   return (
-    <>
+   
     
-    <Image className='-z-50' src={"/backGround.jpg"} alt='background' fill></Image>
     <main className='h-4/6 relative '>
-        
-    
+    <Image className='-z-50 ' src={"/backGround.jpg"} alt='background' fill></Image>
     <div className='absolute bg-myWhite w-full h-full  -z-40 rounded-t-3xl'></div>
 
     <div className='flex justify-center flex-col items-center'>
@@ -25,7 +23,7 @@ function page() {
         </form>
     </div>
     </main>
-    </>
+  
   )
 }
 
