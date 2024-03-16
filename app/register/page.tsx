@@ -4,7 +4,9 @@ import React from 'react'
 import { IoIosArrowBack } from 'react-icons/io'
 import { IoEye } from 'react-icons/io5'
 
+
 function page() {
+  
   return (
     <main className='h-4/6 relative bg-gradient-to-r from-blue-500 to-cyan-500 '>
     
