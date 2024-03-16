@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { IoIosArrowBack } from "react-icons/io";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
+import Link from 'next/link';
 
 function page() {
   return (
@@ -12,7 +13,9 @@ function page() {
     
     <div className='h-[25%] grid grid-cols-6 place-items-center justify-center '>
       {/* <Image className='-z-50 ' src={"/backGround.jpg"} alt='background' fill></Image> */}
+      <Link href={"/"}>
       <IoIosArrowBack className='col-start-1 text-myWhite text-3xl' />
+      </Link>
       <h1 className='text-myWhite font-myFont text-2xl font-bold text-center col-start-2 col-end-6 '>Wave Planner</h1>
     </div>
 
