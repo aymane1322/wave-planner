@@ -6,7 +6,7 @@ export async function dataFromClient(data?: any ) {
   let x = await prisma.utilisateur.create({
     data:{
       nomU :data.get("name"),
-      emailU:data.get("email")
+      emailU:data.get("email"),
     },
     
   })
