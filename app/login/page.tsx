@@ -29,7 +29,7 @@ function page() {
               <p className='text-[9px] font-bold text-right w-full'>Forgot Password?</p>
               <button type='submit' className='text-myWhite text-sm font-myFont bg-myBlue w-[100%] p-2 rounded-2xl font-bold'>Login</button>
               <p className='text-myBlack text-[9px] font-myFont font-bold pt-3'>Or login with</p>
-              <button className='text-myBlack flex items-center justify-center text-sm font-myFont bg-white w-[100%] p-2 rounded-2xl font-bold'><Image  src={"/google_ic.svg"} alt='google icon' width={20} height={20}></Image> <span className='ml-1 text-[10px]'>Log In Using Google</span></button>
+              <button className='text-myBlack flex items-center justify-center text-sm font-myFont bg-slate-200 w-[100%] p-2 rounded-2xl font-bold'><Image  src={"/google_ic.svg"} alt='google icon' width={20} height={20}></Image> <span className='ml-1 text-[10px]'>Log In Using Google</span></button>
               <button className='text-myWhite flex items-center justify-center text-sm font-myFont bg-myBlack w-[100%] p-2 rounded-2xl font-bold'><Image  src={"/cib_apple.svg"} alt='google icon' width={20} height={20}></Image> <span className='ml-3 text-[10px]'>Log In Using Apple</span></button>
               <p className=' absolute  text-myBlack text-[12px] font-myFont font-bold   -bottom-20  '>Don’t have an account? <span className='text-myBlue cursor-pointer'>Register Now</span></p>
           </form>
