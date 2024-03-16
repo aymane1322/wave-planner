@@ -2,7 +2,7 @@ import {z} from 'zod'
 export {schema , loginSchema}
 
 const schema = z.object({
-    name: z.string().nonempty().max(50),
+    name: z.string().min(1).max(50),
     email: z.string().email(),
     password: z.string().min(8).regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/),
     confirmPassword: z.string().min(8),
