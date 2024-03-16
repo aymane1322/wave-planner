@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
 datasource db {
@@ -8,8 +7,154 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model user {
-  name  String? @db.VarChar(100)
-  email String  @unique(map: "user_unique") @db.VarChar(100)
-  id    Int     @id @default(autoincrement())
+model utilisateur {
+  idUtilisateur           Int                @id @default(autoincrement())
+  nomU                    String             @unique(map: "utilisateur_unique") @db.VarChar(100)
+  emailU                  String             @unique(map: "utilisateur_unique_1") @db.VarChar(100)
+  motDePasseU             String?            @db.VarChar(100)
+  villeU                  String?            @db.VarChar(100)
+  imgProfileU             String?            @db.VarChar(100)
+  followerU               String?            @db.VarChar(100)
+  adresseU                String?            @db.VarChar(100)
+  telU                    String?            @db.VarChar(100)
+  dateNaissanceU          DateTime?          @db.Date
+  dateInscriptionU        DateTime?          @db.Date
+  roleU                   Role               @default(BASIC)
+  diplomCoach             String?            @db.VarChar(100)
+  dateAbonnement          DateTime?          @db.Date
+  datExpirationAbonnement DateTime?          @db.Date
+  idAbonnement            Int?
+  commande                commande[]
+  commentaire             commentaire[]
+  evenement               evenement[]
+  facture                 facture[]
+  location                location[]
+  abonnementpremium       abonnementpremium? @relation(fields: [idAbonnement], references: [idAbonnement], onDelete: Cascade, map: "utilisateur_abonnementpremium_FK")
+
+  @@index([idAbonnement], map: "utilisateur_abonnementpremium_FK")
+}
+
+model abonnementpremium {
+  idAbonnement   Int           @id @default(autoincrement())
+  nomAbonnement  String?       @db.VarChar(100)
+  prixAbonnement Float?
+  isFreeA        Boolean?
+  descriptionA   String?       @db.VarChar(100)
+  utilisateur    utilisateur[]
+}
+
+model commande {
+  idCommande    Int          @id @default(autoincrement())
+  dateCmd       DateTime?    @db.Date
+  montant       Float?
+  idUtilisateur Int?
+  utilisateur   utilisateur? @relation(fields: [idUtilisateur], references: [idUtilisateur], onDelete: Cascade, map: "commande_utilisateur_FK")
+
+  @@index([idUtilisateur], map: "commande_utilisateur_FK")
+}
+
+model commentaire {
+  idCommentaire   Int          @id @default(autoincrement())
+  contenu         String?      @db.VarChar(100)
+  datePublication DateTime?    @db.Date
+  idUtilisateur   Int?
+  idEvent         Int?
+  evenement       evenement?   @relation(fields: [idEvent], references: [idEvent], onDelete: Cascade, map: "commentaire_evenement_FK")
+  utilisateur     utilisateur? @relation(fields: [idUtilisateur], references: [idUtilisateur], onDelete: Cascade, map: "commentaire_utilisateur_FK")
+
+  @@index([idEvent], map: "commentaire_evenement_FK")
+  @@index([idUtilisateur], map: "commentaire_utilisateur_FK")
+}
+
+model evenement {
+  idEvent            Int           @id @default(autoincrement())
+  titreEvent         String?       @db.VarChar(100)
+  descriptionEvent   String?       @db.VarChar(100)
+  imgEvent           String?       @db.VarChar(100)
+  maxUsersEvent      Int?
+  isPublic           Boolean?
+  isCoach            Boolean?
+  dateEvent          DateTime?     @db.Date
+  dateDebutEvent     DateTime?     @db.Date
+  numberOfJoinedUser Int?
+  idUtilisateur      Int?
+  idSpot             Int?
+  commentaire        commentaire[]
+  spotsdesurf        spotsdesurf?  @relation(fields: [idSpot], references: [idSpot], onDelete: Cascade, map: "evenement_spotsdesurf_FK")
+  utilisateur        utilisateur?  @relation(fields: [idUtilisateur], references: [idUtilisateur], onDelete: Cascade, map: "evenement_utilisateur_FK")
+
+  @@index([idSpot], map: "evenement_spotsdesurf_FK")
+  @@index([idUtilisateur], map: "evenement_utilisateur_FK")
+}
+
+model facture {
+  idFacture      Int          @id @default(autoincrement())
+  montant        Float?
+  dateEmission   DateTime?    @db.Date
+  statutPaiement Boolean?
+  idUtilisateur  Int?
+  utilisateur    utilisateur? @relation(fields: [idUtilisateur], references: [idUtilisateur], onDelete: Cascade, map: "facture_utilisateur_FK")
+
+  @@index([idUtilisateur], map: "facture_utilisateur_FK")
+}
+
+model location {
+  idLocation      Int          @id @default(autoincrement())
+  dateLocation    DateTime?    @db.Date
+  dureeLocation   Int?
+  dateFin         DateTime?    @db.Date
+  FactureLocation String?      @db.VarChar(100)
+  idUtilisateur   Int?
+  idProduit       Int?
+  produit         produit?     @relation(fields: [idProduit], references: [idProduit], onDelete: Cascade, map: "location_produit_FK")
+  utilisateur     utilisateur? @relation(fields: [idUtilisateur], references: [idUtilisateur], onDelete: Cascade, map: "location_utilisateur_FK")
+
+  @@index([idProduit], map: "location_produit_FK")
+  @@index([idUtilisateur], map: "location_utilisateur_FK")
+}
+
+model magasin {
+  idMagasin      Int       @id @default(autoincrement())
+  nomMag         String?   @db.VarChar(100)
+  adresseMag     String?   @db.VarChar(100)
+  telMag         String?   @db.VarChar(100)
+  descriptionMag String?   @db.VarChar(100)
+  produit        produit[]
+}
+
+model message {
+  idMessage    Int       @id @default(autoincrement())
+  contenu      String?   @db.VarChar(300)
+  dateEnvoi    DateTime? @db.Date
+  nameSender   String?   @db.VarChar(100)
+  nameReciever String?   @db.VarChar(100)
+}
+
+model produit {
+  idProduit     Int        @id @default(autoincrement())
+  typeProduit   String?    @db.VarChar(100)
+  disponibilite Int?
+  tarifLocation Float?
+  idDisponible  Boolean?
+  idMagasin     Int?
+  location      location[]
+  magasin       magasin?   @relation(fields: [idMagasin], references: [idMagasin], onDelete: Cascade, map: "produit_magasin_FK")
+
+  @@index([idMagasin], map: "produit_magasin_FK")
+}
+
+model spotsdesurf {
+  idSpot           Int         @id @default(autoincrement())
+  nomSpot          String      @unique(map: "spotsdesurf_unique") @db.VarChar(100)
+  localisation     String?     @db.VarChar(100)
+  description      String?     @db.VarChar(100)
+  niveauDifficulte String?     @db.VarChar(100)
+  rating           Int?
+  evenement        evenement[]
+}
+
+enum Role {
+  BASIC
+  COACH
+  ADMIN
 }

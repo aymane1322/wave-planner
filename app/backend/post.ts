@@ -2,18 +2,23 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-export async function dataFromClient(data?: any) {
-  let x = await prisma.user.update({
+export async function dataFromClient(data?: any ) {
+  let x = await prisma.utilisateur.create({
     data:{
-      name :"aymaaaaaaaan"
+      nomU :data.get("name"),
+      emailU:data.get("email")
     },
-    where :{
-      email:"moha123@gmail1.com"
-    }
+    
   })
+  
   console.log(x);
+  console.log("data added succesfuly ...")
 }
 
+export async function getUsers(){
+  let data = await prisma.utilisateur.findMany()
+  return data
+}
 
 
 dataFromClient().then(
@@ -22,3 +27,5 @@ dataFromClient().then(
     console.log(e)
     await prisma.$disconnect
 })
+
+
