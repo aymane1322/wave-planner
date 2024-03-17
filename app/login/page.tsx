@@ -7,7 +7,7 @@ function page() {
   return (
    
     
-    <main className='h-4/6 relative bg-gradient-to-r from-blue-500 to-cyan-500 w-full '>
+    <main className='h-4/6 relative bg-gradient-to-r from-blue-500 to-cyan-500 w-full sm:hidden'>
     
     <div className='h-[20%] grid grid-cols-6 place-items-center justify-center w-full '>
       {/* <Image className='-z-50 ' src={"/backGround.jpg"} alt='background' fill></Image> */}

@@ -6,7 +6,7 @@ function layout({children}:Readonly<{
     children: React.ReactNode;
   }>) {
   return (
-    <main className='w-full h-full bg-gradient-to-r from-blue-500 to-cyan-500'>
+    <main className='w-full h-full bg-gradient-to-r from-blue-500 to-cyan-500 sm:hidden'>
         <div className='h-[20%] grid grid-cols-12 grid-rows-2 items-end gap-y-3 justify-center text-center'>
             <div className='col-start-1 col-end-4 flex justify-evenly'>
               <div ><Image src={"/Vector.svg"} alt='drawer icon' height={25} width={25}></Image></div>

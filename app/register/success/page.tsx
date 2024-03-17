@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 function page() {
   return (
-    <main className="bg-gradient-to-tr from-blue-700 to-green-400 w-full h-full flex flex-col justify-center items-center space-y-8">
+    <main className="bg-gradient-to-tr from-blue-700 to-green-400 w-full h-full flex flex-col justify-center items-center space-y-8 sm:hidden">
       <Image src={"/Sticker.png"} alt="stiker" height={70} width={70}></Image>
 
       <div>

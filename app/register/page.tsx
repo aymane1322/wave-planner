@@ -6,7 +6,7 @@ import RegisterForm from "../components/RegisterForm";
 
 function page() {
   return (
-    <main className="h-4/6 relative bg-gradient-to-r from-blue-500 to-cyan-500 ">
+    <main className="h-4/6 relative bg-gradient-to-r from-blue-500 to-cyan-500 sm:hidden">
       <div className="h-[20%] grid grid-cols-6 place-items-center justify-center ">
         <Link href={"/login"}>
           <IoIosArrowBack className="col-start-1 text-myWhite text-3xl" />
