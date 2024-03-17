@@ -1,7 +1,8 @@
+import { Prisma } from '@prisma/client';
 import {z} from 'zod'
-export {schema , loginSchema}
+export {registerSchema , loginSchema}
 
-const schema = z.object({
+const registerSchema = z.object({
     name: z.string().min(1).max(50),
     email: z.string().email().max(100),
     password: z.string().min(8).max(100).regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/),
@@ -19,16 +20,3 @@ const loginSchema = z.object({
 
 
 
-// const handleSubmit = (e) => {
-//     e.preventDefault();
-//     try {
-//       schema.parse(formData);
-//       // Form data is valid, you can submit it
-//       console.log('Form data:', formData);
-//     } catch (error) {
-//       // Validation failed, set errors
-//       setErrors(error.errors);
-//     }
-//   };
-
-// {errors.name && <div className="text-red-500">{errors.name}</div>}
