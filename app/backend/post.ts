@@ -3,6 +3,7 @@ import { PrismaClient } from "@prisma/client";
 import { registerSchema } from "./zod";
 import bcrypt from "bcryptjs";
 
+
 const prisma = new PrismaClient();
 
 export async function dataFromClient(formData?: FormData) {
@@ -39,6 +40,7 @@ export async function dataFromClient(formData?: FormData) {
   console.log(alldata);
   console.log("data added successfuly ...");
 
+  
   return { error: "all good xD" };
 }
 

@@ -6,15 +6,22 @@ import { IoEyeOff } from "react-icons/io5";
 import Link from "next/link";
 import { registerSchema } from "../backend/zod";
 import { dataFromClient } from "../backend/post";
+import { useRouter } from "next/navigation";
+
+
 
 function RegisterForm() {
+
   const [nameEror, setNameEror] = useState(false);
   const [emailEror, setEmailEror] = useState(false);
   const [passwordEror, setPasswordEror] = useState(false);
   const [confirmPasswordEror, setConfirmPasswordEror] = useState(false);
   const [duplicated, setDuplicated] = useState(false);
+  const router = useRouter()
 
-  // TO DO TYPE :
+
+
+
   async function handlSubmit(formData: FormData) {
     setNameEror(false);
     setEmailEror(false);
@@ -52,15 +59,20 @@ function RegisterForm() {
 
       return;
     }
-
+    
     let respons = await dataFromClient(formData);
     if (respons.error === "Name or email already exists") {
       setDuplicated(true);
       console.log(respons.error);
-    } else {
+    } else if(respons.error === "all good xD") {
       setDuplicated(false);
+      router.push("/register/success")
     }
   }
+
+
+
+ 
 
   return (
     <form
