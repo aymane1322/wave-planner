@@ -6,9 +6,11 @@ import { IoEyeOff } from "react-icons/io5";
 import Link from "next/link";
 import { dataToServer } from "../backend/login";
 import { loginSchema } from "../backend/zod";
+import { useRouter } from "next/navigation";
 
 function LoginForm() {
   const [badData, setbadData] = useState(false);
+  const router = useRouter();
 
   async function handlSubmit(formData: FormData) {
     let validate = loginSchema.safeParse({
@@ -20,7 +22,15 @@ function LoginForm() {
       setbadData(true);
       return;
     }
-    dataToServer(formData);
+    
+    let respons = await dataToServer(formData);
+    if (respons.error === "passwor or email incorrect") {
+      setbadData(true);
+      console.log(respons.error);
+    } else if (respons.error === "all good") {
+      setbadData(false);
+      router.push("/login/landingPage");
+    }
   }
 
   return (
