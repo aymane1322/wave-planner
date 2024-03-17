@@ -1,6 +1,6 @@
 import React from 'react'
 
-function page() {
+function Home() {
   return (
     <main>
         <h1>landing page ... welcome meste potato</h1>
@@ -8,4 +8,4 @@ function page() {
   )
 }
 
-export default page
+export default Home

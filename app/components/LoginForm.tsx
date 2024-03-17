@@ -29,7 +29,7 @@ function LoginForm() {
       console.log(respons.error);
     } else if (respons.error === "all good") {
       setbadData(false);
-      router.push("/login/landingPage");
+      router.push("/home");
     }
   }
 
