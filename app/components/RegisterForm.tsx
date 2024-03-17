@@ -66,62 +66,67 @@ function RegisterForm() {
 
   return (
     <form
-      className="flex items-center flex-col space-y-3 relative"
+      className="flex items-center flex-col space-y-3 w-full relative "
       action={handlSubmit}
     >
       <input
-        className="p-2 rounded-md text-sm w-[130%]  focus:bg-slate-200 focus:outline-myBlue"
+        className="p-2 rounded-md text-sm w-[90%]  focus:bg-slate-200 focus:outline-myBlue"
         type="text"
         placeholder="Username"
         name="name"
       />
       {nameEror && (
-        <div className="text-red-500 self-start text-sm">invalid username </div>
+        <div className="text-red-500 self-start text-sm pl-4">invalid username </div>
       )}
       {duplicated && (
-        <div className="text-red-500 self-start text-sm">
+        <div className="text-red-500 self-start text-sm pl-4">
           Name or email already exists
         </div>
       )}
       <input
-        className="p-2 rounded-md text-sm w-[130%]  focus:bg-slate-200 focus:outline-myBlue"
+        className="p-2 rounded-md text-sm w-[90%]  focus:bg-slate-200 focus:outline-myBlue"
         type="email"
         placeholder="Email"
         name="email"
       />
       {emailEror && (
-        <div className="text-red-500 self-start text-sm">invalid email</div>
+        <div className="text-red-500 self-start text-sm pl-4 ">invalid email</div>
       )}
       {duplicated && (
-        <div className="text-red-500 self-start text-sm">
+        <div className="text-red-500 self-start text-sm pl-4 ">
           Name or email already exists
         </div>
       )}
-      <input
-        className="p-2 rounded-md text-sm w-[130%] focus:bg-slate-200  focus:outline-myBlue"
-        type="password"
-        placeholder="Password"
-        name="password"
-      />
+      <div className="relative w-[90%]  ">
+        <input
+          className="p-2 rounded-md text-sm w-full focus:bg-slate-200  focus:outline-myBlue"
+          type="password"
+          placeholder="Enter your password"
+          name="password"
+        />
+        <IoEye className="absolute top-[10px] right-[15px] text-gray-400" />
+      </div>
       {passwordEror && (
-        <div className="text-red-500 self-start text-sm">invalid password</div>
+        <div className="text-red-500 self-start text-sm pl-4">invalid password</div>
       )}
-      <input
-        className="p-2 rounded-md text-sm w-[130%] focus:bg-slate-200  focus:outline-myBlue"
-        type="password"
-        placeholder="Confirm Password"
-        name="confirmPassword"
-      />
+      <div className="relative w-[90%]  ">
+        <input
+          className="p-2 rounded-md text-sm w-full focus:bg-slate-200  focus:outline-myBlue"
+          type="password"
+          placeholder="confirm your password"
+          name="confirmPassword"
+        />
+        <IoEye className="absolute top-[10px] right-[15px] text-gray-400" />
+      </div>
       {confirmPasswordEror && (
-        <div className="text-red-500 self-start text-sm">
+        <div className="text-red-500 self-start text-sm pl-4">
           password don&apos;t match
         </div>
       )}
-      <IoEye className="absolute top-[95px] left-[215px] text-gray-400" />
-      <IoEye className="absolute top-[143px] left-[215px] text-gray-400" />
+      
       <button
         type="submit"
-        className="text-myWhite text-sm font-myFont bg-myBlue w-[130%] p-2 rounded-2xl font-bold"
+        className="text-myWhite text-sm font-myFont bg-myBlue w-[90%] p-2 rounded-2xl font-bold"
       >
         Register
       </button>
@@ -130,7 +135,7 @@ function RegisterForm() {
       </p>
       <button
         disabled
-        className="text-myBlack flex items-center justify-center text-sm font-myFont bg-slate-200 w-[130%] p-2 rounded-2xl font-bold"
+        className="text-myBlack flex items-center justify-center text-sm font-myFont bg-slate-200 w-[90%] p-2 rounded-2xl font-bold"
       >
         <Image
           src={"/google_ic.svg"}
@@ -142,7 +147,7 @@ function RegisterForm() {
       </button>
       <button
         disabled
-        className="text-myWhite flex items-center justify-center text-sm font-myFont bg-myBlack w-[130%] p-2 rounded-2xl font-bold"
+        className="text-myWhite flex items-center justify-center text-sm font-myFont bg-myBlack w-[90%] p-2 rounded-2xl font-bold"
       >
         <Image
           src={"/cib_apple.svg"}
