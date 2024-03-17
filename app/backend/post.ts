@@ -3,6 +3,7 @@ import { PrismaClient } from "@prisma/client";
 import { registerSchema } from "./zod";
 import bcrypt from "bcryptjs";
 
+
 const prisma = new PrismaClient();
 
 export async function dataFromClient(formData?: FormData) {
