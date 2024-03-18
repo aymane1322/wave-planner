@@ -6,7 +6,7 @@ export default function Home() {
 
  
   return (
-    <main className="w-full h-full">
+    <main className="w-full h-full sm:hidden">
       <div className="flex flex-col justify-around items-center w-full h-full ">
         <h1 className="text-myWhite font-myFont text-4xl font-bold sm:text-7xl sm:text-slate-50 pb-12">
           Wave Planner
