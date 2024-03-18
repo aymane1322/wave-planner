@@ -8,13 +8,13 @@ function BigEvent() {
     
     <div className="w-[93%] h-[93%] rounded-3xl flex flex-col justify-between">
         {/* fill image go her ...🏄‍♀️ */}
-        <Image className="object-cover rounded-3xl p-2 " src={"/event1.jpg"} alt="event image" fill></Image>
-        <div className="z-10  w-full h-[11%] flex justify-between mt-2">
-            <div className="bg-myWhite w-[30%] ml-2 rounded-full h-[100%] flex items-center justify-evenly">
+        <Image className="object-cover rounded-3xl p-3 " src={"/event1.jpg"} alt="event image" fill></Image>
+        <div className="z-10  w-full h-[11%] flex justify-between mt-3">
+            <div className="bg-myWhite w-[30%] ml-2 rounded-full h-[100%] flex items-center justify-center">
                 <div className="bg-gray-600 w-[1.7rem] h-[1.7rem] rounded-full">
                     {/* profile image go her ...🙊 */}
                 </div>
-                <p className="text-black text-[0.7rem] font-bold">NUE</p>
+                <p className="text-black text-[0.7rem] font-bold pl-2">NUE</p>
             </div>
             <div className="bg-myWhite w-[42%] mr-2 rounded-full h-[100%] text-black text-[0.7rem] font-bold flex justify-center items-center">Wed, 27 July</div>
         </div>

@@ -11,7 +11,7 @@ function page() {
         <p className="text-myWhite text-center text-sm ">
           Your account has been created
         </p>
-        <p className="text-myWhite text-center text-sm ">succssfully</p>
+        <p className="text-myWhite text-center text-sm ">successfully</p>
       </div>
 
       <Link href={"/login"}>
