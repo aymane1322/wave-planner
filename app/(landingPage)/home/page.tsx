@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import BigEvent from "../../components/BigEvent";
 
 function Home() {
   return (
-    <div className='bg-zinc-900 h-[65%] w-full overflow-scroll rounded-t-[2.3rem] flex items-center justify-center '>
-        <p className='text-3xl text-white'>Coming Soon ...</p>
+    <div className="bg-slate-200 h-[65%] w-full overflow-scroll rounded-t-[2.3rem] ">
+      <p className="text-sm pt-3 font-bold text-black text-center">Hot events This week 🔥</p>
+      <BigEvent>
+        
+      </BigEvent>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

@@ -69,8 +69,8 @@ function layout({
         </div>
       </div>
       {children}
-      <div className="bg-slate-200 h-[15%] w-full flex flex-col  items-center">
-        <div className="bg-white mt-1 w-[95%] h-[80%] rounded-full shadow-md flex justify-center items-center gap-9">
+      <div className="bg-slate-200 h-[15%] w-full flex flex-col justify-center  items-center">
+        <div className="bg-white  w-[95%] h-[75%] rounded-full shadow-md flex justify-center items-center gap-9">
           <Image 
             src={"/homeButton.png"}
             alt="home icon"
