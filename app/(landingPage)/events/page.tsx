@@ -34,11 +34,31 @@ function Events() {
           Events nearby
         </p>
         {/* small Events go her ... */}
-        <SmallEvent></SmallEvent>
-        <SmallEvent></SmallEvent>
-        <SmallEvent></SmallEvent>
-        <SmallEvent></SmallEvent>
-        <SmallEvent></SmallEvent>
+        <SmallEvent
+          title="Surf with Aymane 🍉"
+          adress="Banana Point 😋"
+          date="Fri, 08 Jul 2022"
+          time="07:00"
+          userName="Aymane"
+          imgPath="/bgSurf.jpg"
+        ></SmallEvent>
+
+        <SmallEvent
+          title="Surf with Aymane 🍉"
+          adress="Banana Point 😋"
+          date="Fri, 08 Jul 2022"
+          time="07:00"
+          userName="Aymane" 
+        ></SmallEvent>
+
+        <SmallEvent
+          title="Surf with Aymane 🍉"
+          adress="Banana Point 😋"
+          date="Fri, 08 Jul 2022"
+          time="07:00"
+          userName="Aymane"
+
+        ></SmallEvent>
       </div>
     </>
   );

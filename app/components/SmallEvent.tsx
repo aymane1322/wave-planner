@@ -10,9 +10,10 @@ type SmallEvent = {
     time:string,
     title:string,
     adress:string,
+    edit?:boolean
 }
 
-function SmallEvent({userName,imgPath,date,title,adress,time}:SmallEvent) {
+function SmallEvent({userName,imgPath,date,title,adress,time,edit}:SmallEvent) {
   return (
     <div className="bg-white w-[90%] min-h-[8rem] mb-2 rounded-3xl flex justify-center items-center relative">
       <div className="bg-white w-[95%] h-[90%] rounded-3xl flex">
@@ -22,19 +23,23 @@ function SmallEvent({userName,imgPath,date,title,adress,time}:SmallEvent) {
         </div>
         <div className=" h-full w-[40%]  "></div>
         <div className=" h-full w-[60%] flex flex-col justify-center pl-1">
-            <p className="text-[0.8rem] font-bold pl-[2px]">Surf with Aymane</p>
+            <p className="text-[0.8rem] font-bold pl-[2px]">{title}</p>
             <p className="flex pb-2">
                 <IoLocationSharp className="text-myBlue text-[1rem] pt-[1px]" />
-                <span className="text-black text-[0.7rem]  font-semibold">Banana Point 😛</span>
+                <span className="text-black text-[0.7rem]  font-semibold">{adress}</span>
             </p>
-            <p className="text-myBlue text-[0.7rem]  font-semibold">Thusday, 29 July</p>
-            <p className="text-myBlue text-[0.7rem] pb-2 font-semibold">17.00</p>
+            <p className="text-myBlue text-[0.7rem]  font-semibold">{date}</p>
+            <p className="text-myBlue text-[0.7rem] pb-2 font-semibold">{time}</p>
             <div className="flex items-center">
-                <div className=" w-[1.2rem] h-[1.2rem] mr-1 rounded-full">
+                <div className=" w-[1.2rem] h-[1.2rem] mr-1 rounded-full overflow-hidden">
                     {!imgPath?<FaUserAlt />:<Image className="rounded-full" src={imgPath} alt="user image" width={30} height={30}></Image>}
                 </div>
-                <p className="text-black text-[0.7rem] font-bold">aymane</p>
+                <p className="text-black text-[0.7rem] font-bold">{userName}</p>
+                {edit?
+                <button className="absolute right-1 bottom-2 w-20 h-8 bg-slate-200 rounded-full shadow-md font-bold text-myBlue text-[0.8rem]">Edit</button>
+                :
                 <button className="absolute right-1 bottom-2 w-20 h-8 bg-myBlue rounded-full shadow-md font-bold text-white text-[0.8rem]">GO!</button>
+                }
             </div>
         </div>
       </div>
