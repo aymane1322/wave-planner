@@ -32,7 +32,7 @@ function SmallEvent({userName,imgPath,date,title,adress,time,edit}:SmallEvent) {
             <p className="text-myBlue text-[0.7rem] pb-2 font-semibold">{time}</p>
             <div className="flex items-center">
                 <div className=" w-[1.2rem] h-[1.2rem] mr-1 rounded-full overflow-hidden">
-                    {!imgPath?<FaUserAlt />:<Image className="rounded-full" src={imgPath} alt="user image" width={30} height={30}></Image>}
+                    {!imgPath?<FaUserAlt />:<Image className="rounded-full" src={imgPath} alt="user image" objectFit="cover" width={30} height={30}></Image>}
                 </div>
                 <p className="text-black text-[0.7rem] font-bold">{userName}</p>
                 {edit?

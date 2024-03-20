@@ -40,7 +40,7 @@ function HomeHeader({ gridRows, showExtraButtons ,imgPath }: HomeHeader) {
         <div>
           <IoMdNotificationsOutline className="text-white text-3xl" />
         </div>
-        <div className="text-white  ring-white rounded-full w-7 h-7 flex items-center justify-center">
+        <div className="text-white  ring-white rounded-full w-7 h-7 flex items-center justify-center overflow-hidden">
           {!imgPath?<FaUserAlt />:<Image className="rounded-full" src={imgPath} alt="user image" width={30} height={30}></Image>}
         </div>
       </div>
