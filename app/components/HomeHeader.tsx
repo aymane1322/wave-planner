@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import { FaUserAlt } from "react-icons/fa";
 
 type HomeHeader = {
-  gridRows: string;
-
+  gridRows: string,
+  imgPath?:string,
   showExtraButtons?: boolean;
 };
-function HomeHeader({ gridRows, showExtraButtons }: HomeHeader) {
+function HomeHeader({ gridRows, showExtraButtons ,imgPath }: HomeHeader) {
   return (
     <div
       className={`h-[20%] grid grid-cols-12 grid-rows-@${gridRows} items-end gap-y-3 justify-center text-center `}
@@ -39,7 +40,9 @@ function HomeHeader({ gridRows, showExtraButtons }: HomeHeader) {
         <div>
           <IoMdNotificationsOutline className="text-white text-3xl" />
         </div>
-        <div className=" bg-myWhite rounded-full w-7 h-7">rip</div>
+        <div className="text-white  ring-white rounded-full w-7 h-7 flex items-center justify-center">
+          {!imgPath?<FaUserAlt />:<Image className="rounded-full" src={imgPath} alt="user image" width={30} height={30}></Image>}
+        </div>
       </div>
 
       {showExtraButtons ? (

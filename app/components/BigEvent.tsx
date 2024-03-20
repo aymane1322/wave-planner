@@ -22,7 +22,6 @@ function BigEvent({userName,imgPath,date,title,adress}:BigEvent) {
             <div className="bg-myWhite w-fit ml-2 rounded-full h-[100%] flex items-center justify-center">
                 <div className=" w-[1.6rem] h-[1.6rem] rounded-full ml-2 flex items-center justify-center overflow-hidden">
                     {/* profile image go her ...🙊 */}
-                    {/* <img src="/image.png" alt="user image" className="rounded-full object-cover" /> */}
                     {!imgPath?<FaUserAlt />:<Image className="rounded-full" src={imgPath} alt="user image" width={30} height={30}></Image>}
                 </div>
                 <p className="text-black text-[0.7rem] font-bold pl-1 pr-2">{userName}</p>
