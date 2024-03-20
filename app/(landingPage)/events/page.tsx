@@ -7,7 +7,7 @@ function Events() {
   return (
     <>
       <div className="h-[10%] w-full overflow-hidden pt-2">
-        <HomeHeader gridRows="1" imgPath="/image.png"></HomeHeader>
+        <HomeHeader gridRows="1" imgPath="/bgSurf.jpg"></HomeHeader>
       </div>
       <div className="h-[75%]  flex flex-col items-center overflow-scroll relative">
         <div className="min-h-[12rem] w-[90%] bg-yellow-400 rounded-3xl absolute ">
