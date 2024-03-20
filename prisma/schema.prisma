@@ -7,33 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model utilisateur {
-  idUtilisateur           Int                @id @default(autoincrement())
-  nomU                    String             @unique(map: "utilisateur_unique") @db.VarChar(100)
-  emailU                  String             @unique(map: "utilisateur_unique_1") @db.VarChar(100)
-  motDePasseU             String?            @db.VarChar(100)
-  villeU                  String?            @db.VarChar(100)
-  imgProfileU             String?            @db.VarChar(100)
-  followerU               String?            @db.VarChar(100)
-  adresseU                String?            @db.VarChar(100)
-  telU                    String?            @db.VarChar(100)
-  dateNaissanceU          DateTime?          @db.Date
-  dateInscriptionU        DateTime?          @db.Date
-  roleU                   Role               @default(BASIC)
-  diplomCoach             String?            @db.VarChar(100)
-  dateAbonnement          DateTime?          @db.Date
-  datExpirationAbonnement DateTime?          @db.Date
-  idAbonnement            Int?
-  commande                commande[]
-  commentaire             commentaire[]
-  evenement               evenement[]
-  facture                 facture[]
-  location                location[]
-  abonnementpremium       abonnementpremium? @relation(fields: [idAbonnement], references: [idAbonnement], onDelete: Cascade, map: "utilisateur_abonnementpremium_FK")
-
-  @@index([idAbonnement], map: "utilisateur_abonnementpremium_FK")
-}
-
 model abonnementpremium {
   idAbonnement   Int           @id @default(autoincrement())
   nomAbonnement  String?       @db.VarChar(100)
@@ -153,7 +126,34 @@ model spotsdesurf {
   evenement        evenement[]
 }
 
-enum Role {
+model utilisateur {
+  idUtilisateur           Int                @id @default(autoincrement())
+  nomU                    String             @unique(map: "utilisateur_unique") @db.VarChar(100)
+  emailU                  String             @unique(map: "utilisateur_unique_1") @db.VarChar(100)
+  motDePasseU             String?            @db.VarChar(100)
+  villeU                  String?            @db.VarChar(100)
+  imgProfileU             String?            @db.VarChar(100)
+  followerU               String?            @db.VarChar(100)
+  adresseU                String?            @db.VarChar(100)
+  telU                    String?            @db.VarChar(100)
+  dateNaissanceU          DateTime?          @db.Date
+  dateInscriptionU        DateTime?          @db.Date
+  roleU                   utilisateur_roleU  @default(BASIC)
+  diplomCoach             String?            @db.VarChar(100)
+  dateAbonnement          DateTime?          @db.Date
+  datExpirationAbonnement DateTime?          @db.Date
+  idAbonnement            Int?
+  commande                commande[]
+  commentaire             commentaire[]
+  evenement               evenement[]
+  facture                 facture[]
+  location                location[]
+  abonnementpremium       abonnementpremium? @relation(fields: [idAbonnement], references: [idAbonnement], onDelete: Cascade, map: "utilisateur_abonnementpremium_FK")
+
+  @@index([idAbonnement], map: "utilisateur_abonnementpremium_FK")
+}
+
+enum utilisateur_roleU {
   BASIC
   COACH
   ADMIN
