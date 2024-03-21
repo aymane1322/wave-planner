@@ -1,10 +1,14 @@
 import React from "react";
 import HomeHeader from "../../components/HomeHeader";
 import Image from "next/image";
-import SmallEvent from "../../components/SmallEvent";
 import HomeFooter from "../../components/HomeFooter";
+import AllEvents from "../../components/AllEvents";
+import { fetchAllEvents } from "../../backend/fetchAllEvents";
 
-function Events() {
+
+async function Events() {
+let allEvents = await fetchAllEvents()
+
   return (
     <>
       <div className="h-[10%] w-full overflow-hidden pt-2">
@@ -35,33 +39,10 @@ function Events() {
           Events nearby
         </p>
         {/* small Events go her ... */}
-        <SmallEvent
-          title="Surf with Aymane 🍉"
-          adress="Banana Point 😋"
-          date="Fri, 08 Jul 2022"
-          time="07:00"
-          userName="Aymane"
-          imgPath="/bgSurf.jpg"
-        ></SmallEvent>
-
-        <SmallEvent
-          title="Surf with Aymane 🍉"
-          adress="Banana Point 😋"
-          date="Fri, 08 Jul 2022"
-          time="07:00"
-          userName="Aymane" 
-        ></SmallEvent>
-
-        <SmallEvent
-          title="Surf with Aymane 🍉"
-          adress="Banana Point 😋"
-          date="Fri, 08 Jul 2022"
-          time="07:00"
-          userName="Aymane"
-
-        ></SmallEvent>
+        <AllEvents data={allEvents}/>
+        
       </div>
-      <HomeFooter></HomeFooter>
+      <HomeFooter/>
     </>
   );
 }
