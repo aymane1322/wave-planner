@@ -1,10 +1,9 @@
 'use server'
+import prisma from "../../prisma/client";
 import { loginSchema } from "../backend/zod";
-import { PrismaClient } from "@prisma/client";
+
 import bcrypt from "bcryptjs"
 
-
-const prisma = new PrismaClient();
 
 export async function dataToServer(formData:FormData){
     let validate = loginSchema.safeParse({
