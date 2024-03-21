@@ -12,9 +12,7 @@ function layout({
 }>) {
   return (
     <main className="w-full h-full bg-gradient-to-r from-blue-500 to-cyan-500 -z-50 overflow-hidden sm:hidden ">
-      
       {children}
-      <HomeFooter></HomeFooter>
     </main>
   );
 }

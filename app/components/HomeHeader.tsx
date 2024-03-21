@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FaUserAlt } from "react-icons/fa";
+import Link from "next/link";
 
 type HomeHeader = {
   gridRows: string,
@@ -23,12 +24,14 @@ function HomeHeader({ gridRows, showExtraButtons ,imgPath }: HomeHeader) {
           ></Image>
         </div>
         <div>
-          <Image
-            src={"/Vector2.svg"}
-            alt="drawer icon"
-            height={22}
-            width={22}
-          ></Image>
+          <Link href={"/userEvents"}>
+            <Image
+              src={"/Vector2.svg"}
+              alt="drawer icon"
+              height={22}
+              width={22}
+            ></Image>
+          </Link>
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import React from "react";
 import HomeHeader from "../../components/HomeHeader";
 import Image from "next/image";
 import SmallEvent from "../../components/SmallEvent";
+import HomeFooter from "../../components/HomeFooter";
 
 function Events() {
   return (
@@ -60,6 +61,7 @@ function Events() {
 
         ></SmallEvent>
       </div>
+      <HomeFooter></HomeFooter>
     </>
   );
 }

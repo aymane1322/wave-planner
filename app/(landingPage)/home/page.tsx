@@ -1,6 +1,7 @@
 import React from "react";
 import BigEvent from "../../components/BigEvent";
 import HomeHeader from "../../components/HomeHeader";
+import HomeFooter from "../../components/HomeFooter";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
         imgPath="/image.png"
       ></BigEvent>
     </div>
+    <HomeFooter></HomeFooter>
     </>
   );
 }
