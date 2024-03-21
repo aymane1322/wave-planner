@@ -10,7 +10,7 @@ function Events() {
         <HomeHeader gridRows="1" imgPath="/bgSurf.jpg"></HomeHeader>
       </div>
       <div className="h-[75%]  flex flex-col items-center overflow-scroll relative">
-        <div className="min-h-[12rem] w-[90%] bg-yellow-400 rounded-3xl absolute ">
+        <div className="min-h-[14rem] w-[90%] bg-yellow-400 rounded-3xl absolute ">
           <Image
             className="rounded-3xl"
             fill
@@ -19,7 +19,7 @@ function Events() {
             alt="event img"
           ></Image>
         </div>
-        <div className="min-h-[12rem] w-[90%] z-50 rounded-3xl shadow-md ">
+        <div className="min-h-[14rem] w-[90%] z-50 rounded-3xl shadow-md ">
           <div className="flex flex-col justify-end h-full w-full">
             <p className="text-myWhite font-medium pl-2 text-2xl">
               Create event with
