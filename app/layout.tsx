@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} w-dvw h-dvh `}>
+      <body className={`${inter.className} w-dvw h-dvh relative`}>
         {children}
         <main className="hidden sm:visible sm:flex sm:justify-center sm:items-center sm:h-full sm:w-full">
           <h1 className="sm:text-4xl sm:font-black sm:text-indigo-700 sm:animate-pulse sm:duration-1000 sm:delay-500">

@@ -9,8 +9,10 @@ async function Home() {
   let allEvents = await fetchAllEvents()
   return (
     <>
+    <div className="h-[20%] w-full  pt-5 ">
     <HomeHeader  gridRows="2"  showExtraButtons imgPath="/bgSurf.jpg"></HomeHeader>
-    <div className="bg-slate-200 h-[65%] w-full overflow-scroll rounded-t-[2.3rem] flex flex-col items-center">
+    </div>
+    <div className="bg-slate-200 h-[65%] w-full overflow-scroll rounded-t-[2.3rem] flex flex-col items-center ">
       <p className="text-sm pt-3 pb-2 font-bold text-black text-center">
         Hot events This week 🔥
       </p>

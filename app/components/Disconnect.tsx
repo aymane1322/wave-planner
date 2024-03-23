@@ -37,7 +37,7 @@ function Disconnect({ imgPath }: Disconnect) {
         <div>
           <p
             onClick={disconnect}
-            className="absolute bg-gray-200 rounded-md py-[0.05rem] px-1 z-50 top-8 text-red-600 text-sm right-2 font-bold opacity-80 hover:opacity-100 active:animate-ping"
+            className="absolute bg-gray-200 rounded-md py-[0.2rem] px-1 z-50 top-[3.2rem] text-red-600 text-sm right-2 font-bold opacity-90 hover:opacity-100 active:animate-ping"
           >
             Disconnect
           </p>

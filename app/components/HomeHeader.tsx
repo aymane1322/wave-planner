@@ -15,7 +15,7 @@ function HomeHeader({ gridRows, showExtraButtons ,imgPath }: HomeHeader) {
     <div
       className={`h-[20%] grid grid-cols-12 grid-rows-@${gridRows} items-end gap-y-3 justify-center text-center `}
     >
-      <div className="col-start-1 col-end-4 flex justify-evenly">
+      <div className="col-start-1 col-end-4 flex justify-evenly ">
         <div>
           <Image
             src={"/Vector.svg"}
@@ -40,7 +40,7 @@ function HomeHeader({ gridRows, showExtraButtons ,imgPath }: HomeHeader) {
         Wave Planner
       </div>
 
-      <div className="col-start-10 col-end-13 flex justify-evenly relative">
+      <div className="col-start-10 col-end-13 flex justify-evenly ">
         <div>
           <IoMdNotificationsOutline className="text-white text-3xl" />
         </div>
