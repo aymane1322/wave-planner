@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import SmallEvent from "./SmallEvent";
 import { nanoid } from "nanoid";
 import type { JoinEvent } from "../types/types";
-import { split } from "postcss/lib/list";
+
 
 
 function AllEvents({data}) {

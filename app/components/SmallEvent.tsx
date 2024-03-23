@@ -23,7 +23,7 @@ function SmallEvent({userName,imgPath,date,title,adress,time,edit}:SmallEvent) {
         </div>
         <div className=" h-full w-[40%]  "></div>
         <div className=" h-full w-[60%] flex flex-col justify-center pl-1">
-            <p className="text-[0.8rem] font-bold pl-[2px]">{title}</p>
+            <p className="text-[0.8rem] font-bold pl-[2px] truncate">{title}</p>
             <p className="flex pb-2">
                 <IoLocationSharp className="text-myBlue text-[1rem] pt-[1px]" />
                 <span className="text-black text-[0.7rem]  font-semibold">{adress}</span>

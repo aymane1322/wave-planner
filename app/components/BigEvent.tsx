@@ -9,15 +9,16 @@ type BigEvent = {
     date:string,
     title:string,
     adress:string,
+    backGroundImag?:string
 }
 
-function BigEvent({userName,imgPath,date,title,adress}:BigEvent) {
+function BigEvent({userName,imgPath,date,title,adress,backGroundImag}:BigEvent) {
   return (
   <div className="bg-myWhite w-[90%] min-h-[22rem] rounded-3xl flex flex-col justify-center items-center shadow-md relative mb-2">
     
     <div className="w-[93%] h-[93%] rounded-3xl flex flex-col justify-between">
         {/* fill image go her ...🏄‍♀️ */}
-        <Image className="object-cover rounded-3xl p-3 " src={"/event1.jpg"} alt="event image" fill></Image>
+        {backGroundImag?<Image className="object-cover rounded-3xl p-3 " src={backGroundImag} alt="event image" fill></Image>:<Image className="object-cover rounded-3xl p-3 " src={"/bgSurf.jpg"} alt="event image" fill></Image>}
         <div className="z-10  w-full h-[11%] flex justify-between mt-3">
             <div className="bg-myWhite w-fit ml-2 rounded-full h-[100%] flex items-center justify-center">
                 <div className=" w-[1.6rem] h-[1.6rem] rounded-full ml-2 flex items-center justify-center overflow-hidden">
