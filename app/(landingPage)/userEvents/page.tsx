@@ -6,8 +6,8 @@ import Image from "next/image";
 function Page() {
   return (
     <>
-      <div className="h-[10%] w-full overflow-hidden pt-2">
-        <HomeHeader gridRows="1" imgPath="/bgSurf.jpg"></HomeHeader>
+      <div className="h-[10%] w-full  pt-2">
+        <HomeHeader gridRows="1" imgPath="/bgSurf.jpg" showBackArrow></HomeHeader>
       </div>
       <div className="h-[90%]  flex flex-col items-center overflow-scroll relative">
         <Image className="fixed bottom-7 right-4 z-50" src={"/addEvent.png"} alt="Button" width={120} height={120}></Image>

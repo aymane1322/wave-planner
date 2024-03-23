@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { IoMdNotificationsOutline } from "react-icons/io";
+import { IoIosArrowBack, IoMdNotificationsOutline } from "react-icons/io";
 import { FaUserAlt } from "react-icons/fa";
 import Link from "next/link";
 import Disconnect from "./Disconnect";
@@ -9,24 +9,28 @@ type HomeHeader = {
   gridRows: string,
   imgPath?:string,
   showExtraButtons?: boolean;
+  showBackArrow?:boolean
 };
-function HomeHeader({ gridRows, showExtraButtons ,imgPath }: HomeHeader) {
+function HomeHeader({ gridRows, showExtraButtons ,imgPath ,showBackArrow}: HomeHeader) {
   return (
     <div
       className={`h-[20%] grid grid-cols-12 grid-rows-@${gridRows} items-end gap-y-3 justify-center text-center `}
     >
-      <div className="col-start-1 col-end-4 flex justify-evenly ">
+      <div className="col-start-1 col-end-4 flex justify-evenly items-end ">
         <div>
-          <Image
-            src={"/Vector.svg"}
-            alt="drawer icon"
-            height={25}
-            width={25}
-          ></Image>
+          {showBackArrow?<Link href={"/home"}>
+          <IoIosArrowBack className=' text-myWhite absolute  text-4xl top-[0.6rem] left-0  ' />
+          <div className="w-4"></div>
+          </Link>:<Image
+          src={"/Vector.svg"}
+          alt="drawer icon"
+          height={25}
+          width={25}
+        ></Image>}
         </div>
         <div>
           <Link href={"/userEvents"}>
-            <Image
+            <Image 
               src={"/Vector2.svg"}
               alt="drawer icon"
               height={22}
