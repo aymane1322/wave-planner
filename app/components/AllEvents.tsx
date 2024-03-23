@@ -9,10 +9,10 @@ import { split } from "postcss/lib/list";
 function AllEvents({data}) {
   const options = {
     weekday: 'short' as const,
-    day: '2-digit',
+    day: '2-digit' as const,
     month: 'short' as const,
-    hour: '2-digit',
-    minute: '2-digit',
+    hour: '2-digit' as const,
+    minute: '2-digit'as const,
     timeZoneName: 'short' as const,
   };
 
