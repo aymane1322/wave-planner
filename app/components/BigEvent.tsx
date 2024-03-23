@@ -16,7 +16,7 @@ function BigEvent({userName,imgPath,date,title,adress,backGroundImag}:BigEvent) 
   return (
   <div className="bg-myWhite w-[90%] min-h-[22rem] rounded-3xl flex flex-col justify-center items-center shadow-md relative mb-2">
     
-    <div className="w-[93%] h-[93%] rounded-3xl flex flex-col justify-between">
+    <div className="w-[100%] h-[100%] rounded-3xl flex flex-col justify-between absolute p-4">
         {/* fill image go her ...🏄‍♀️ */}
         {backGroundImag?<Image className="object-cover rounded-3xl p-3 " src={backGroundImag} alt="event image" fill></Image>:<Image className="object-cover rounded-3xl p-3 " src={"/bgSurf.jpg"} alt="event image" fill></Image>}
         <div className="z-10  w-full h-[11%] flex justify-between mt-3">
