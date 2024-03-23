@@ -16,7 +16,7 @@ function HomeEvent({ data }) {
 
   useEffect(() => {
     setAllEvents(data);
-  }, []);
+  }, [data]);
   let evnt;
 
   if(allEvents){

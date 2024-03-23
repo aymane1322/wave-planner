@@ -20,7 +20,7 @@ function AllEvents({data}) {
 
   useEffect(()=>{
     setAllEvents(data)
-  },[])
+  },[data])
 
  
   return (
