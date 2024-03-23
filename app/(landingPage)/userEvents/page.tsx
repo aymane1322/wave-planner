@@ -2,8 +2,10 @@ import React from "react";
 import HomeHeader from "../../components/HomeHeader";
 import SmallEvent from "../../components/SmallEvent";
 import Image from "next/image";
+import AllUserEvents from "../../components/AllUserEvents";
 
 function Page() {
+ 
   return (
     <>
       <div className="h-[10%] w-full  pt-2">
@@ -14,51 +16,8 @@ function Page() {
         <h1 className="text-white text-left w-full text-3xl pl-2 font-myFont font-bold pb-4">
           Your events
         </h1>
-        <SmallEvent
-          title="Surf with FaLFol 🎶"
-          adress="Spider 🕷"
-          date="21/03/2024"
-          time="06:10"
-          userName="FaLfoL"
-          edit
-          imgPath="/bgSurf.jpg"
-        ></SmallEvent>
-        <SmallEvent
-          title="Surf with FaLFol 🎶"
-          adress="Spider 🕷"
-          date="21/03/2024"
-          time="06:10"
-          userName="FaLfoL"
-          edit
-          imgPath="/bgSurf.jpg"
-        ></SmallEvent>
-        <SmallEvent
-          title="Surf with FaLFol 🎶"
-          adress="Spider 🕷"
-          date="21/03/2024"
-          time="06:10"
-          userName="FaLfoL"
-          edit
-          imgPath="/bgSurf.jpg"
-        ></SmallEvent>
-        <SmallEvent
-          title="Surf with FaLFol 🎶"
-          adress="Spider 🕷"
-          date="21/03/2024"
-          time="06:10"
-          userName="FaLfoL"
-          edit
-          imgPath="/bgSurf.jpg"
-        ></SmallEvent>
-        <SmallEvent
-          title="Surf with FaLFol 🎶"
-          adress="Spider 🕷"
-          date="21/03/2024"
-          time="06:10"
-          userName="FaLfoL"
-          edit
-          imgPath="/bgSurf.jpg"
-        ></SmallEvent>
+        <AllUserEvents/>
+        
       </div>
     </>
   );

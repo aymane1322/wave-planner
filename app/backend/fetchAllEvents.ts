@@ -1,5 +1,5 @@
 import prisma from "../../prisma/client";
-export type FetchedDataEvent = ReturnType<typeof fetchAllEvents>;
+
 
 export async function fetchAllEvents() {
   let allEvents = await prisma.evenement.findMany({
