@@ -3,6 +3,7 @@ import Image from "next/image";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FaUserAlt } from "react-icons/fa";
 import Link from "next/link";
+import Disconnect from "./Disconnect";
 
 type HomeHeader = {
   gridRows: string,
@@ -39,12 +40,13 @@ function HomeHeader({ gridRows, showExtraButtons ,imgPath }: HomeHeader) {
         Wave Planner
       </div>
 
-      <div className="col-start-10 col-end-13 flex justify-evenly">
+      <div className="col-start-10 col-end-13 flex justify-evenly relative">
         <div>
           <IoMdNotificationsOutline className="text-white text-3xl" />
         </div>
-        <div className="text-white  ring-white rounded-full w-7 h-7 flex items-center justify-center overflow-hidden">
-          {!imgPath?<FaUserAlt />:<Image className="rounded-full" src={imgPath} alt="user image" width={30} height={30}></Image>}
+        <div className="text-white  ring-white rounded-full w-7 h-7 flex items-center justify-center overflow-hidden ">
+          <Disconnect imgPath={imgPath}/>
+          {/* user disconnect from her .... */}
         </div>
       </div>
 

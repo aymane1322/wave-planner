@@ -28,6 +28,7 @@ function LoginForm() {
       setbadData(true);
       console.log(respons.error);
     } else if (respons.error === "all good") {
+      sessionStorage.setItem("email",formData.get("email").toString())
       setbadData(false);
       router.push("/home");
     }
