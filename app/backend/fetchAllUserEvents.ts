@@ -1,31 +1,35 @@
+'use server'
 import prisma from "../../prisma/client";
 
 
 export async function fetchUserEvents(email?:string) {
-    let allUserEvents = prisma.evenement.findMany({
-        include: {
-          spotsdesurf: {
-            select: {
-              localisation: true,
-            },
-          },
-          assosiation_utilisateur_evenement: {
-            include: {
-              utilisateur: {
-                select: {
-                  nomU: true,
-                },
-                where:{
-                emailU:email
-                }
-              },
-            },
-           
-          },
+  let allUserEvents
+    if(email){
+      console.log("i'm innnnnnnnnnnnnnn");
+      console.log("and the email is ",email);
+      
+      
+      allUserEvents =await prisma.utilisateur.findUnique({
+        where:{
+          emailU:email
         },
-        
-      });
+        include:{
+          assosiation_utilisateur_evenement:{
+            include:{
+              evenement:{
+                include:{
+                  spotsdesurf:true
+                }
+              }
+            }
+          }
+        },
+      })
+    }
       console.log(email)
+      console.log("daaaaaaaaaaaaaaaataaaaaaaaaaaaaaaaaaaaaaaaaa");
+      
+      console.log(allUserEvents)
       return allUserEvents;
 }
 

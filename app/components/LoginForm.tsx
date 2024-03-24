@@ -8,6 +8,9 @@ import { dataToServer } from "../backend/login";
 import { loginSchema } from "../backend/zod";
 import { useRouter } from "next/navigation";
 
+
+
+
 function LoginForm() {
   const [badData, setbadData] = useState(false);
   const router = useRouter();
@@ -44,6 +47,7 @@ function LoginForm() {
         type="text"
         placeholder="Enter your email"
         name="email"
+        required
       />
       {badData && (
         <div className="text-red-500 self-start text-sm pl-4">
@@ -56,6 +60,7 @@ function LoginForm() {
           type="password"
           placeholder="Enter your password"
           name="password"
+          required
         />
         <IoEye className="absolute top-[10px] right-[15px] text-gray-400" />
       </div>

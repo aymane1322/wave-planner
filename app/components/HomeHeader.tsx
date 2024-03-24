@@ -5,6 +5,7 @@ import { FaUserAlt } from "react-icons/fa";
 import Link from "next/link";
 import Disconnect from "./Disconnect";
 
+
 type HomeHeader = {
   gridRows: string,
   imgPath?:string,
@@ -12,6 +13,7 @@ type HomeHeader = {
   showBackArrow?:boolean
 };
 function HomeHeader({ gridRows, showExtraButtons ,imgPath ,showBackArrow}: HomeHeader) {
+  
   return (
     <div
       className={`h-[20%] grid grid-cols-12 grid-rows-@${gridRows} items-end gap-y-3 justify-center text-center `}
