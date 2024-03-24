@@ -2,6 +2,7 @@ import React from 'react'
 import { IoIosArrowBack } from "react-icons/io";
 import Link from 'next/link';
 import LoginForm from '../components/LoginForm';
+import {RegisterLink, LoginLink,LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
 function page() {
   return (
@@ -20,8 +21,10 @@ function page() {
     <div className=' bg-myWhite w-full h-[80%] rounded-t-[2.3rem] '>
       <div className='flex justify-center flex-col items-center w-full'>
           <h2 className='text-lg font-bold py-2'>Let’s Surf with friends!</h2>
-          <LoginForm>
-          </LoginForm>
+          
+    <LoginLink>Sign in</LoginLink>
+    <RegisterLink>Sign up</RegisterLink>
+    <LogoutLink>sing out</LogoutLink>
       </div>
      
     </div>
