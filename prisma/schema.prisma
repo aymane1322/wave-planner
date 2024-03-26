@@ -138,7 +138,7 @@ model spotsdesurf {
 
 model utilisateur {
   idUtilisateur                     Int                                 @id @default(autoincrement())
-  nomU                              String                              @unique(map: "utilisateur_unique") @db.VarChar(100)
+  nomU                              String                              @db.VarChar(100)
   emailU                            String                              @unique(map: "utilisateur_unique_1") @db.VarChar(100)
   motDePasseU                       String?                             @db.VarChar(100)
   villeU                            String?                             @db.VarChar(100)

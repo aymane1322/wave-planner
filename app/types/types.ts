@@ -18,7 +18,7 @@ export type JoinEvent={
         idUtilisateur: number,
         idEvent: number,
         isAdmin: boolean,
-        utilisateur: { nomU: string }
+        utilisateur: { nomU: string ,imgProfileU:string }
       }
     ]
   }

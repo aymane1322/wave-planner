@@ -32,8 +32,8 @@ function AllEvents({data}) {
         date={evnt.dateDebutEvent.toLocaleString('en-US', options).split(",")[0]
         .concat(", ").concat(evnt.dateDebutEvent.toLocaleString('en-US', options).split(",")[1])}
         time={evnt.dateDebutEvent.toLocaleString('en-US', options).split(",")[2]}
-        userName={evnt.assosiation_utilisateur_evenement[0].utilisateur.nomU}
-        imgPath="/bgSurf.jpg"
+        userName={evnt.assosiation_utilisateur_evenement[0]?.utilisateur.nomU}
+        imgPath={evnt.assosiation_utilisateur_evenement[0]?.utilisateur.imgProfileU}
       ></SmallEvent>
       ))}
     </>

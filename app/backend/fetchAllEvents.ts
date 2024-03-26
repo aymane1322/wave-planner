@@ -14,6 +14,7 @@ export async function fetchAllEvents() {
           utilisateur: {
             select: {
               nomU: true,
+              imgProfileU:true,
             },
           },
         },

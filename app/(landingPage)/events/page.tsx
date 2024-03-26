@@ -4,18 +4,20 @@ import Image from "next/image";
 import HomeFooter from "../../components/HomeFooter";
 import AllEvents from "../../components/AllEvents";
 import { fetchAllEvents } from "../../backend/fetchAllEvents";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 
 async function Events() {
 let allEvents = await fetchAllEvents()
-
+const {getUser} = getKindeServerSession()
+const user = await getUser()
   return (
     <>
       <div className="h-[10%] w-full overflow-hidden pt-2">
-        <HomeHeader gridRows="1" imgPath="/bgSurf.jpg"></HomeHeader>
+        <HomeHeader gridRows="1" imgPath={user.picture}></HomeHeader>
       </div>
-      <div className="h-[75%]  flex flex-col items-center overflow-scroll relative">
-        <div className="min-h-[14rem] w-[90%] bg-yellow-400 rounded-3xl absolute ">
+      <div className="h-[75%] flex flex-col items-center overflow-scroll relative">
+        <div className="min-h-[14rem] w-[90%] bg-yellow-400 rounded-3xl z-30 absolute ">
           <Image
             className="rounded-3xl"
             fill
@@ -24,7 +26,7 @@ let allEvents = await fetchAllEvents()
             alt="event img"
           ></Image>
         </div>
-        <div className="min-h-[14rem] w-[90%] z-50 rounded-3xl shadow-md ">
+        <div className="min-h-[14rem] w-[90%] z-50 rounded-3xl z-30 shadow-md ">
           <div className="flex flex-col justify-end h-full w-full">
             <p className="text-myWhite font-medium pl-2 text-2xl">
               Create event with

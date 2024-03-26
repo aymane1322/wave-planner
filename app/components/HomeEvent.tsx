@@ -35,7 +35,8 @@ function HomeEvent({ data }) {
             .concat(
               evnt.dateDebutEvent.toLocaleString("en-US", options).split(",")[1]
             )}
-          userName={evnt.assosiation_utilisateur_evenement[0].utilisateur.nomU}
+          userName={evnt.assosiation_utilisateur_evenement[0]?.utilisateur.nomU}
+          imgPath={evnt.assosiation_utilisateur_evenement[0]?.utilisateur.imgProfileU}
          
         ></BigEvent>
       )}
