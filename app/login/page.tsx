@@ -2,7 +2,7 @@ import React from 'react'
 import { IoIosArrowBack } from "react-icons/io";
 import Link from 'next/link';
 import LoginForm from '../components/LoginForm';
-import {RegisterLink, LoginLink,LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import {RegisterLink, LoginLink,LogoutLink,} from "@kinde-oss/kinde-auth-nextjs/components";
 
 function page() {
   return (
