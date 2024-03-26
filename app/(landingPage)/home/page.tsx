@@ -4,8 +4,15 @@ import HomeHeader from "../../components/HomeHeader";
 import HomeFooter from "../../components/HomeFooter";
 import HomeEvent from "../../components/HomeEvent";
 import { fetchAllEvents } from "../../backend/fetchAllEvents";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
 
-async function Home() {
+async function  Home() {
+  // const {isAuthenticated} = getKindeServerSession()
+  // const isauth = await isAuthenticated()
+  // if(!isauth){
+  //   redirect("/login")
+  // }
   let allEvents = await fetchAllEvents()
   return (
     <>

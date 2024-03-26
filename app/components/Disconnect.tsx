@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 type Disconnect = {
   imgPath?: string;
@@ -10,11 +11,6 @@ type Disconnect = {
 function Disconnect({ imgPath }: Disconnect) {
   const [showDisc, setShowDisc] = useState(false);
   const router = useRouter();
-
-  function disconnect() {
-    sessionStorage.removeItem("email");
-    router.push("/login");
-  }
 
   function userClick() {
     setShowDisc(!showDisc);
@@ -35,12 +31,11 @@ function Disconnect({ imgPath }: Disconnect) {
       )}
       {showDisc ? (
         <div>
-          <p
-            onClick={disconnect}
-            className="absolute bg-gray-200 rounded-md py-[0.2rem] px-1 z-50 top-[3.2rem] text-red-600 text-sm right-2 font-bold opacity-90 hover:opacity-100 active:animate-ping"
-          >
-            Disconnect
-          </p>
+          <LogoutLink>
+            <p className="absolute bg-gray-200 rounded-md py-[0.2rem] px-1 z-50 top-[3.2rem] text-red-600 text-sm right-2 font-bold opacity-90 hover:opacity-100 active:animate-ping">
+              Disconnect
+            </p>
+          </LogoutLink>
         </div>
       ) : (
         <></>
