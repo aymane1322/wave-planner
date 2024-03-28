@@ -2,33 +2,33 @@
 import React, { useEffect, useState } from "react";
 import SmallEvent from "./SmallEvent";
 import { fetchUserEvents } from "../backend/fetchAllUserEvents";
+import { nanoid } from "nanoid";
 
-function AllUserEvents() {
-  const [data, setData] = useState(null);
+function AllUserEvents({allUserEvents}) {
 
-  useEffect(() => {
-    let email = sessionStorage.getItem("email");
-    async function fetch(){
-    await  fetchUserEvents(email).then((events)=>{
-        setData(events)
-        console.log(data);
-      }).catch((error)=>console.log("error fetching user Events",error)
-      )
-    }
-    fetch();
-  }, []);
+  const options = {
+    weekday: 'short' as const,
+    day: '2-digit' as const,
+    month: 'short' as const,
+    hour: '2-digit' as const,
+    minute: '2-digit'as const,
+    timeZoneName: 'short' as const,
+  };
+
 
   return (
     <>
-      <SmallEvent
-        title="Surf with FaLFol 🎶"
-        adress="Spider 🕷"
-        date="21/03/2024"
-        time="06:10"
-        userName="FaLfoL"
-        edit
-        imgPath="/bgSurf.jpg"
-      />
+      {allUserEvents && allUserEvents.map(evnt=>(
+        <SmallEvent key={nanoid()}
+        title={evnt.evenement.titreEvent}
+        adress={evnt.evenement.spotsdesurf.localisation}
+        date={evnt.evenement.dateDebutEvent.toLocaleString('en-US', options).split(",")[0]
+        .concat(", ").concat(evnt.evenement.dateDebutEvent.toLocaleString('en-US', options).split(",")[1])}
+        time={evnt.evenement.dateDebutEvent.toLocaleString('en-US', options).split(",")[2]}
+        userName={evnt?.utilisateur?.nomU}
+        imgPath={evnt?.utilisateur?.imgProfileU}
+      ></SmallEvent>
+      ))}
     </>
   );
 }

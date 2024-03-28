@@ -1,42 +1,56 @@
 'use server'
+import { revalidatePath } from "next/cache";
 import prisma from "../../prisma/client";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 
 export async function fetchUserEvents(email?:string) {
-  let allUserEvents
-    if(email){
-      console.log("i'm innnnnnnnnnnnnnn");
-      console.log("and the email is ",email);
-      
-      
-      allUserEvents =await prisma.utilisateur.findUnique({
-        where:{
-          emailU:email
+  const{getUser} = getKindeServerSession()
+  const user = await getUser()
+  let id ;
+  user?.email ? id = user?.email : id = user?.id
+
+  let allEvents = await prisma.assosiation_utilisateur_evenement.findMany({
+    where:{
+      isAdmin:true
+    },
+    include:{
+      utilisateur:{
+        select:{
+          emailU:true,
+          nomU:true,
+          imgProfileU:true,
         },
+        where:{
+          emailU:id
+        }
+      },
+      evenement:{
         include:{
-          assosiation_utilisateur_evenement:{
-            include:{
-              evenement:{
-                include:{
-                  spotsdesurf:true
-                }
-              }
+          spotsdesurf:{
+            select:{
+              localisation:true,
             }
           }
-        },
-      })
+        }
+      }
     }
-      console.log(email)
-      console.log("daaaaaaaaaaaaaaaataaaaaaaaaaaaaaaaaaaaaaaaaa");
-      
-      console.log(allUserEvents)
-      return allUserEvents;
+
+  })
+  
+  console.log("useeeeeeeeeeeeeeeeeeeeer data..:");
+  const finalData =allEvents.filter(e=> e.utilisateur !== null  )
+  console.dir(finalData,{depth:null});
+
+  revalidatePath("/userEvents")
+  return finalData;
 }
 
 
 fetchUserEvents()
 .then(async()=>prisma.$disconnect)
 .catch(async(e)=>{
+    console.log(e);
     console.log(e);
     prisma.$disconnect
 })

@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import prisma from "../../prisma/client";
 
 
@@ -21,6 +22,7 @@ export async function fetchAllEvents() {
       },
     },
   });
+  revalidatePath("/events")
   return allEvents;
 }
 

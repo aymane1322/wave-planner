@@ -16,16 +16,10 @@ function AllEvents({data}) {
     timeZoneName: 'short' as const,
   };
 
-  const [allEvents, setAllEvents] = useState<JoinEvent[]|null>(null);
-
-  useEffect(()=>{
-    setAllEvents(data)
-  },[data])
-
  
   return (
     <>
-      {allEvents && allEvents.map(evnt=>(
+      {data && data.map(evnt=>(
         <SmallEvent key={nanoid()}
         title={evnt.titreEvent}
         adress={evnt.spotsdesurf.localisation}

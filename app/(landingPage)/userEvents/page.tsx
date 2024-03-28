@@ -4,10 +4,12 @@ import SmallEvent from "../../components/SmallEvent";
 import Image from "next/image";
 import AllUserEvents from "../../components/AllUserEvents";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { fetchUserEvents } from "../../backend/fetchAllUserEvents";
 
 async function Page() {
   const {getUser} = getKindeServerSession()
   const user = await getUser()
+  const allUserEvents = await fetchUserEvents()
   return (
     <>
       <div className="h-[10%] w-full  pt-2">
@@ -18,7 +20,7 @@ async function Page() {
         <h1 className="text-white text-left w-full text-3xl pl-2 font-myFont font-bold pb-4">
           Your events
         </h1>
-        <AllUserEvents/>
+        <AllUserEvents allUserEvents={allUserEvents}/>
         
       </div>
     </>
