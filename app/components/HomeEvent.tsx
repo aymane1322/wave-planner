@@ -12,19 +12,15 @@ function HomeEvent({ data }) {
     minute: "2-digit" as const,
     timeZoneName: "short" as const,
   };
-  const [allEvents, setAllEvents] = useState<JoinEvent[] | null>(null);
-
-  useEffect(() => {
-    setAllEvents(data);
-  }, [data]);
+  
   let evnt;
 
-  if(allEvents){
-    evnt = allEvents[allEvents.length - 1];
+  if(data){
+    evnt = data[data.length - 1];
   }
   return (
     <>
-      {allEvents && (
+      {data && (
         <BigEvent
           title={evnt.titreEvent}
           adress={evnt.spotsdesurf.localisation}
