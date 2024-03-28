@@ -3,5 +3,5 @@ export default function middleware(req) {
     return withAuth(req);
 }
 export const config = {
-    matcher: ["/home","/events","/userEvents"]
+    matcher: ["/home","/events","/userEvents","/addEvent"]
 };

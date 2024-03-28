@@ -11,8 +11,9 @@ type HomeHeader = {
   imgPath?:string,
   showExtraButtons?: boolean;
   showBackArrow?:boolean
+  goTo?:string
 };
-function HomeHeader({ gridRows, showExtraButtons ,imgPath ,showBackArrow}: HomeHeader) {
+function HomeHeader({ gridRows, showExtraButtons ,imgPath ,showBackArrow ,goTo}: HomeHeader) {
   
   return (
     <div
@@ -20,7 +21,7 @@ function HomeHeader({ gridRows, showExtraButtons ,imgPath ,showBackArrow}: HomeH
     >
       <div className="col-start-1 col-end-4 flex justify-evenly items-end ">
         <div>
-          {showBackArrow?<Link href={"/home"}>
+          {showBackArrow?<Link href={goTo}>
           <IoIosArrowBack className=' text-myWhite absolute  text-4xl top-[0.6rem] left-0  ' />
           <div className="w-4"></div>
           </Link>:<Image
