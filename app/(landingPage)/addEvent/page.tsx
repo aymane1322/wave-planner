@@ -25,7 +25,7 @@ async function Page() {
           height={120}
         ></Image>
         <h1 className="text-white text-left w-full text-3xl pl-2 font-myFont font-bold pb-4">
-          Your events
+          Add Event
         </h1>
       </div>
     </>
