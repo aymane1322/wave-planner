@@ -27,6 +27,7 @@ function AllUserEvents({allUserEvents}) {
         time={evnt.evenement.dateDebutEvent.toLocaleString('en-US', options).split(",")[2]}
         userName={evnt?.utilisateur?.nomU}
         imgPath={evnt?.utilisateur?.imgProfileU}
+        edit
       ></SmallEvent>
       ))}
     </>
